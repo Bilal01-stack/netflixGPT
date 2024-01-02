@@ -15,7 +15,8 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState(null);
   const email = useRef(null);
   const password = useRef(null);
-  const name = useRef(null);
+  const name = useRef(null)
+
 
   const navigate = useNavigate();
   const handleButtonClick = () => {
@@ -49,7 +50,7 @@ export default function Login() {
                 photoURL: photoURL,
               })
             );
-            navigate("/browse");
+            // navigate("/browse");
           }).catch((error) => {
             // An error occurred
             setErrorMessage(error.message);
