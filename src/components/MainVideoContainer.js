@@ -10,12 +10,12 @@ export default function MainVideoContainer() {
   const mainMovie = movies[0];
   console.log(mainMovie);
 
-  const {original_title,overview } = mainMovie;
+  const {original_title,overview,id } = mainMovie;
   return (
     <div>
       MainVideoContainer
       <VideoTitle title={original_title} overview={overview} />
-      <VideoBackGround />
+      <VideoBackGround movieId={id} />
     </div>
   );
 }
