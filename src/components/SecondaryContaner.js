@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 export default function SecondaryContaner() {
   const movies = useSelector((store) => store.movies);
-  console.log(movies);
+  //console.log(movies);
   return (
     <div className=" bg-black">
       <div className="-mt-66 pl-7 relative z-10">

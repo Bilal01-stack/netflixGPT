@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
 import { toggleGptSearchView } from "../utils/gptSlice";
+import { SUPPORTEDp_LANGUAGES } from "../utils/constants";
+import { changeLanguage } from "../utils/configSlice";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -52,6 +54,12 @@ export default function Header() {
   const handleSearchClick=()=>{
     dispatch(toggleGptSearchView());
   }
+  const handleLanguageChange =(e)=>{
+        dispatch(changeLanguage(e.target.value)); 
+  }
+
+  const showGptSearch = useSelector(store=> store.gpt.showGptSearch)
+
   return (
     <div className="absolute w-screen px-6 py-5 bg-gradient-to-b from-black z-10 flex justify-between">
       <img
@@ -61,11 +69,14 @@ export default function Header() {
       />
       {user && (
         <div className="flex p-2">
+          {showGptSearch && ( <select className="bg-gray-500 text-white px-3 py-2 rounded-lg" onChange={handleLanguageChange}>
+          {SUPPORTEDp_LANGUAGES.map(lang => <option key={lang.identifire} value={lang.identifire}>{lang.name}</option>)}
+          </select>)}
           <button
             className="py-2 px-4 mx-4 bg-purple-800 text-white rounded-lg"
             onClick={handleSearchClick}
           >
-            GPT Search
+           { showGptSearch ? "Home PAge":  "GPT Search" }
           </button>
           <img className="w-10 h-10" alt="user icon" src={user?.photoURL} />
           <button onClick={handleSignOut} className="text-bold text-white">

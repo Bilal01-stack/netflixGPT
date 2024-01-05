@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BACKGROUND_IMAGE } from "../utils/constants";
 
 
 export default function Login() {
@@ -92,7 +93,7 @@ export default function Login() {
         <img
           className="absolute"
           alt="Background"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/563192ea-ac0e-4906-a865-ba9899ffafad/94d5a5e8-5924-48cf-a472-3ea68d968fd2/PK-en-20231218-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+          src={BACKGROUND_IMAGE}
         />
       </div>
       <form
