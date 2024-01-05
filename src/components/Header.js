@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export default function Header() {
       });
   };
   useEffect(() => {
-   const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
@@ -46,8 +47,11 @@ export default function Header() {
       }
     });
     //unscribe when the component  will unmount
-    return ()=> unsubscribe();
+    return () => unsubscribe();
   }, []);
+  const handleSearchClick=()=>{
+    dispatch(toggleGptSearchView());
+  }
   return (
     <div className="absolute w-screen px-6 py-5 bg-gradient-to-b from-black z-10 flex justify-between">
       <img
@@ -57,6 +61,12 @@ export default function Header() {
       />
       {user && (
         <div className="flex p-2">
+          <button
+            className="py-2 px-4 mx-4 bg-purple-800 text-white rounded-lg"
+            onClick={handleSearchClick}
+          >
+            GPT Search
+          </button>
           <img className="w-10 h-10" alt="user icon" src={user?.photoURL} />
           <button onClick={handleSignOut} className="text-bold text-white">
             Sign Out
