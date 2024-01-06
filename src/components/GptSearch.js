@@ -7,13 +7,14 @@ export default function GptSearch() {
   return (
     <>
     <div>
-    <div>
         <img
-          className="absolute -z-10"
+          className="absolute -z-10 h-screen object-cover md:h-auto"
           alt="Background"
           src={BACKGROUND_IMAGE}
         />
       </div>
+    <div className=''>
+    
       <GptSearchBar/>
       <GptMovieSuggestions/>
     </div>

@@ -17,3 +17,5 @@ export const SUPPORTEDp_LANGUAGES = [
   { identifire: "urdu", name: "Urdu" },
   { identifire: "spanish", name: "Spanish" },
 ];
+
+export const BARD_APUI_KEY = "eQiU7CXiB2f6cRgLzf_9tmLIjBM7KMm5zMxfZ3BLJ2QB5ANkv3AqHXYkdgOsmZfahMqggQ."

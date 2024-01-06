@@ -61,14 +61,14 @@ export default function Header() {
   const showGptSearch = useSelector(store=> store.gpt.showGptSearch)
 
   return (
-    <div className="absolute w-screen px-6 py-5 bg-gradient-to-b from-black z-10 flex justify-between">
+    <div className="absolute w-screen px-6 py-5 bg-gradient-to-b from-black z-10 flex flex-col justify-between bg-black md:flex-row  md:bg-green-300">
       <img
-        className="w-44"
+        className="w-44 mx-auto md:mx-0"
         alt="logo"
         src="https://assets.nflxext.com/en_us/home/logo_v7.png"
       />
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 justify-between">
           {showGptSearch && ( <select className="bg-gray-500 text-white px-3 py-2 rounded-lg" onChange={handleLanguageChange}>
           {SUPPORTEDp_LANGUAGES.map(lang => <option key={lang.identifire} value={lang.identifire}>{lang.name}</option>)}
           </select>)}
@@ -78,7 +78,7 @@ export default function Header() {
           >
            { showGptSearch ? "Home PAge":  "GPT Search" }
           </button>
-          <img className="w-10 h-10" alt="user icon" src={user?.photoURL} />
+          <img className="hidden md:block w-10 h-10" alt="user icon" src={user?.photoURL} />
           <button onClick={handleSignOut} className="text-bold text-white">
             Sign Out
           </button>

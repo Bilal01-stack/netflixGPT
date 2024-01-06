@@ -89,16 +89,16 @@ export default function Login() {
   return (
     <div>
       <Header />
-      <div>
+      <div className="absolute">
         <img
-          className="absolute"
+          className="h-screen object-cover md:h-auto"
           alt="Background"
           src={BACKGROUND_IMAGE}
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 absolute p-8 bg-black my-36 text-white mx-auto right-0 left-0 rounded-lg bg-opacity-75"
+        className="w-full md:w-3/12 absolute p-8 bg-black my-36 text-white mx-auto right-0 left-0 rounded-lg bg-opacity-75"
       >
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sing In" : "SignUp"}

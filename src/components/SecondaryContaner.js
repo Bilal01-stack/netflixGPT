@@ -7,7 +7,7 @@ export default function SecondaryContaner() {
   //console.log(movies);
   return (
     <div className=" bg-black">
-      <div className="-mt-66 pl-7 relative z-10">
+      <div className="mt-0 md:-mt-66 md:pl-7 relative z-10">
         <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
         <MovieList title={"Popular"} movies={movies.popularMovies} />
         <MovieList title={"Trending"} movies={movies.nowPlayingMovies} />

@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 export default function GptSearchBar() {
     const langKey = useSelector((store)=>store.config.lang);
   return (
-    <div className="pt-[10%] flex justify-center ">
-      <form className=" w-1/2 bg-black grid grid-cols-12">
+    <div className="pt-[60%] md:pt-[20%] flex justify-center ">
+      <form className="w-full md:w-1/2 bg-black grid grid-cols-12">
         <input
           type="text"
           placeholder={lang[langKey].gptSearchPlaceholder}
