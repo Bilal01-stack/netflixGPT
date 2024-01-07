@@ -10,9 +10,9 @@ export default function SecondaryContaner() {
       <div className="mt-0 md:-mt-66 md:pl-7 relative z-10">
         <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
         <MovieList title={"Popular"} movies={movies.popularMovies} />
-        <MovieList title={"Trending"} movies={movies.nowPlayingMovies} />
-        <MovieList title={"Horror"} movies={movies.nowPlayingMovies} />
-        <MovieList title={"Upcomming"} movies={movies.nowPlayingMovies} />
+        <MovieList title={"Trending"} movies={movies.nowTrendingMovies} />
+        <MovieList title={"Top Rated"} movies={movies.topRateddMovies} />
+        <MovieList title={"Upcomming"} movies={movies.upComingMovies} />
       </div>
     </div>
   );
